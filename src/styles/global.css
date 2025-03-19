@@ -36,7 +36,6 @@ body {
     padding: 0;
     text-align: left;
     background: var(--gray-dark);
-    /* background: linear-gradient(var(--gray-gradient)) no-repeat; */
     background-size: 100% 600px;
     word-wrap: break-word;
     overflow-wrap: break-word;
@@ -60,6 +59,7 @@ h6 {
     color: rgb(var(--black));
     line-height: 1.2;
 }
+
 h1 {
     font-size: 3.052em;
 }
