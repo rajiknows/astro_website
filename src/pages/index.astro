@@ -16,20 +16,20 @@ import Folder from "../components/Folder.astro";
 
         <main class="max-w-[700px] mx-auto px-4 py-12">
             <h1
-                class="text-4xl font-bold text-gray-700 dark:text-gray-300 mb-6"
+                class="text-4xl font-bold text-gray-700 dark:text-gray-300 mb-4"
             >
                 Rajesh Jha
             </h1>
-            <h2 class="text-xl text-gray-700 dark:text-gray-300">
+            <h2 class="text-lg text-gray-700 dark:text-gray-300">
                 Indie developer | Building low-level systems & tools
             </h2>
-            <div class="prose dark:prose-invert">
+            <div class="prose dark:prose-invert mt-8">
                 <p class="text-gray-700 dark:text-gray-300">
                     I specialize in low-level programming, distributed systems,
                     and creating efficient tools that scale. Passionate about
                     building high-performance software and exploring new tech.
                 </p>
-                <p class="text-gray-700 dark:text-gray-300">
+                <p class="text-gray-700 dark:text-gray-300 mt-6 mb-10">
                     Currently working on projects that involve Rust, Zig, and
                     distributed computing. Open to collaborations and
                     open-source contributions.
@@ -43,35 +43,35 @@ import Folder from "../components/Folder.astro";
             </h1>
 
             <div class="grid grid-cols-2 gap-3">
-                <a href="/websites">
+                <a href="/websites" class="block">
                     <div
-                        class="border dark:border-stone-800 rounded-md px-3 bg-stone-100 dark:bg-stone-900 py-2 text-center text-gray-700 dark:text-gray-300 flex justify-between"
+                        class="border dark:border-stone-800 rounded-md px-4 py-3 bg-stone-100 dark:bg-stone-900 flex items-center justify-between text-gray-700 dark:text-gray-300"
                     >
-                        <div>Website</div>
+                        <span>Website</span>
                         <Folder />
                     </div>
                 </a>
-                <a href="/softwares">
+                <a href="/softwares" class="block">
                     <div
-                        class="border dark:border-stone-800 rounded-md px-3 bg-stone-100 dark:bg-stone-900 py-2 text-center text-gray-700 dark:text-gray-300 flex justify-between"
+                        class="border dark:border-stone-800 rounded-md px-4 py-3 bg-stone-100 dark:bg-stone-900 flex items-center justify-between text-gray-700 dark:text-gray-300"
                     >
-                        <div>Software</div>
+                        <span>Software</span>
                         <Folder />
                     </div>
                 </a>
-                <a href="/posts">
+                <a href="/posts" class="block">
                     <div
-                        class="border dark:border-stone-800 rounded-md px-3 bg-stone-100 dark:bg-stone-900 py-2 text-center text-gray-700 dark:text-gray-300 flex justify-between"
+                        class="border dark:border-stone-800 rounded-md px-4 py-3 bg-stone-100 dark:bg-stone-900 flex items-center justify-between text-gray-700 dark:text-gray-300"
                     >
-                        <div>Posts</div>
+                        <span>Posts</span>
                         <Folder />
                     </div>
                 </a>
-                <a href="/work">
+                <a href="/work" class="block">
                     <div
-                        class="border dark:border-stone-800 rounded-md px-3 bg-stone-100 dark:bg-stone-900 py-2 text-center text-gray-700 dark:text-gray-300 flex justify-between"
+                        class="border dark:border-stone-800 rounded-md px-4 py-3 bg-stone-100 dark:bg-stone-900 flex items-center justify-between text-gray-700 dark:text-gray-300"
                     >
-                        <div>Work</div>
+                        <span>Work</span>
                         <Folder />
                     </div>
                 </a>
