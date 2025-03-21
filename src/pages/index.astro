@@ -14,22 +14,26 @@ import Folder from "../components/Folder.astro";
     <body class="h-full bg-gray-50 dark:bg-stone-950 flex flex-col">
         <Header />
 
-        <main class="max-w-[700px] mx-auto px-4 py-12">
+        <main class="w-full max-w-[700px] mx-auto px-4 py-12">
             <h1
-                class="text-4xl font-bold text-gray-700 dark:text-gray-300 mb-4"
+                class="text-4xl font-bold text-gray-700 dark:text-gray-300 mb-4 text-left"
             >
                 Rajesh Jha
             </h1>
-            <h2 class="text-lg text-gray-700 dark:text-gray-300">
+            <h2 class="text-lg text-gray-700 dark:text-gray-300 text-left">
                 Indie developer | Building low-level systems & tools
             </h2>
-            <div class="prose dark:prose-invert mt-8">
-                <p class="text-gray-700 dark:text-gray-300">
+            <div class="prose dark:prose-invert mt-8 text-left">
+                <p
+                    class="text-sm md:text-base text-gray-700 dark:text-gray-300"
+                >
                     I specialize in low-level programming, distributed systems,
                     and creating efficient tools that scale. Passionate about
                     building high-performance software and exploring new tech.
                 </p>
-                <p class="text-gray-700 dark:text-gray-300 mt-6 mb-10">
+                <p
+                    class="text-sm md:text-base text-gray-700 dark:text-gray-300 mt-6 mb-10"
+                >
                     Currently working on projects that involve Rust, Zig, and
                     distributed computing. Open to collaborations and
                     open-source contributions.
@@ -37,12 +41,12 @@ import Folder from "../components/Folder.astro";
             </div>
 
             <h1
-                class="text-3xl font-medium text-gray-700 dark:text-gray-300 mb-6"
+                class="text-3xl font-medium text-gray-700 dark:text-gray-300 mb-6 text-left"
             >
                 Portfolio
             </h1>
 
-            <div class="grid grid-cols-2 gap-3">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <a href="/websites" class="block">
                     <div
                         class="border dark:border-stone-800 rounded-md px-4 py-3 bg-stone-100 dark:bg-stone-900 flex items-center justify-between text-gray-700 dark:text-gray-300"

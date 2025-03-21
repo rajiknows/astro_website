@@ -18,30 +18,32 @@ const posts = (await getCollection("blog")).sort(
     </head>
     <body class="h-full bg-gray-50 dark:bg-stone-950 flex flex-col">
         <Header />
-        <main class="max-w-[960px] mx-auto px-4 py-12">
+        <main class="w-full max-w-[800px] mx-auto px-4 md:px-6 py-12">
             <section>
-                <ul class="flex flex-wrap gap-8 list-none p-0">
+                <ul
+                    class="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 list-none p-0"
+                >
                     {
                         posts.map((post, index) => (
                             <li
                                 class={`${
                                     index === 0
-                                        ? "w-full text-center"
-                                        : "w-[calc(50%-1rem)]"
+                                        ? "col-span-1 sm:col-span-2 text-center"
+                                        : "col-span-1"
                                 }`}
                             >
                                 <a
                                     href={`/blog/${post.id}/`}
-                                    class="block hover:text-accent"
+                                    class="block hover:text-accent py-2"
                                 >
                                     <img
-                                        class="w-full mb-2 rounded-lg shadow-sm hover:shadow-md"
+                                        class="w-full aspect-video object-cover rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200"
                                         width={720}
                                         height={360}
                                         src={post.data.heroImage}
                                         alt=""
                                     />
-                                    <h4 class="text-gray-900 dark:text-gray-300 text-xl font-bold">
+                                    <h4 class="text-gray-900 dark:text-gray-300 text-lg sm:text-xl font-bold leading-snug mt-2">
                                         {post.data.title}
                                     </h4>
                                     <p class="text-gray-600 dark:text-gray-400 text-sm">
