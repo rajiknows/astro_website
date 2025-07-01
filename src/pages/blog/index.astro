@@ -9,54 +9,87 @@ import FormattedDate from "../../components/FormattedDate.astro";
 const posts = (await getCollection("blog")).sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
+
+const postsByYear = posts.reduce((acc, post) => {
+    const year = post.data.pubDate.getFullYear();
+    const month = post.data.pubDate.toLocaleString("default", {
+        month: "long",
+    });
+    if (!acc[year]) {
+        acc[year] = {};
+    }
+    if (!acc[year][month]) {
+        acc[year][month] = [];
+    }
+    acc[year][month].push(post);
+    return acc;
+}, {});
 ---
 
 <!doctype html>
 <html lang="en" class="h-full">
     <head>
-        <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+        <BaseHead
+            title={`Blog | ${SITE_TITLE}`}
+            description={SITE_DESCRIPTION}
+        />
     </head>
     <body class="h-full bg-gray-50 dark:bg-stone-950 flex flex-col">
         <Header />
-        <main class="w-full max-w-[800px] mx-auto px-4 md:px-6 py-12">
-            <section>
-                <ul
-                    class="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 list-none p-0"
-                >
-                    {
-                        posts.map((post, index) => (
-                            <li
-                                class={`${
-                                    index === 0
-                                        ? "col-span-1 sm:col-span-2 text-center"
-                                        : "col-span-1"
-                                }`}
-                            >
-                                <a
-                                    href={`/blog/${post.id}/`}
-                                    class="block hover:text-accent py-2"
-                                >
-                                    <img
-                                        class="w-full aspect-video object-cover rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200"
-                                        width={720}
-                                        height={360}
-                                        src={post.data.heroImage}
-                                        alt=""
-                                    />
-                                    <h4 class="text-gray-900 dark:text-gray-300 text-lg sm:text-xl font-bold leading-snug mt-2">
-                                        {post.data.title}
-                                    </h4>
-                                    <p class="text-gray-600 dark:text-gray-400 text-sm">
-                                        <FormattedDate
-                                            date={post.data.pubDate}
-                                        />
-                                    </p>
-                                </a>
-                            </li>
-                        ))
-                    }
-                </ul>
-            </section>
+        <main class="w-full max-w-[700px] mx-auto px-4 py-12">
+            <h1
+                class="text-4xl font-bold text-gray-700 dark:text-gray-300 mb-4 text-left"
+            >
+                Blog
+            </h1>
+            <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">
+                Most of my writing is about programming, technology, books, and
+                math. Occasionally, there may be posts that do not fit into any
+                one of these categories. There is no general theme to this blog,
+                and that is by design :^).
+            </p>
+
+            {
+                Object.keys(postsByYear)
+                    .sort((a, b) => b - a)
+                    .map((year) => (
+                        <section class="mb-8">
+                            <h2 class="text-2xl font-bold text-gray-700 dark:text-gray-300 mb-4">
+                                {year}
+                            </h2>
+                            {Object.keys(postsByYear[year]).map((month) => (
+                                <div class="mb-6">
+                                    <h3 class="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                                        {month}
+                                    </h3>
+                                    <ul class="list-decimal list-inside p-0">
+                                        {postsByYear[year][month].map(
+                                            (post) => (
+                                                <li class="mb-2">
+                                                    <a
+                                                        href={`/blog/${post.slug}/`}
+                                                        class="text-lg text-gray-800 dark:text-gray-200 hover:underline"
+                                                    >
+                                                        {post.data.title}
+                                                    </a>
+                                                    <span class="text-sm text-gray-500 dark:text-gray-400 ml-2">
+                                                        -{" "}
+                                                        <FormattedDate
+                                                            date={
+                                                                post.data
+                                                                    .pubDate
+                                                            }
+                                                        />
+                                                    </span>
+                                                </li>
+                                            ),
+                                        )}
+                                    </ul>
+                                </div>
+                            ))}
+                        </section>
+                    ))
+            }
         </main>
         <Footer />
     </body>

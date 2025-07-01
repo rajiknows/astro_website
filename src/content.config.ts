@@ -24,10 +24,19 @@ const projects = defineCollection({
         description: z.string(),
         priority: z.number().min(1).optional(), // the first priority is the currently building
         pubDate: z.coerce.date(),
-        github: z.string().url().optional(),
-        website: z.string().url().optional(),
-        heroImage: z.string().url().optional(),
+        github: z.string().optional(),
+        website: z.string().optional(),
+        heroImage: z.string().optional(),
     }),
 });
 
-export const collections = { blog, projects };
+const now = defineCollection({
+    loader: glob({ base: "./src/content/now", pattern: "**/*.{md,mdx}" }),
+    schema: z.object({
+        title: z.string(),
+        description: z.string().optional(),
+        pubDate: z.coerce.date(),
+    }),
+});
+
+export const collections = { blog, projects, now };
