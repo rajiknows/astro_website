@@ -59,16 +59,13 @@ const postsByYear = posts.reduce((acc, post) => {
                             </h2>
                             {Object.keys(postsByYear[year]).map((month) => (
                                 <div class="mb-6">
-                                    <h3 class="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-2">
-                                        {month}
-                                    </h3>
                                     <ul class="list-decimal list-inside p-0">
                                         {postsByYear[year][month].map(
                                             (post) => (
                                                 <li class="mb-2">
                                                     <a
                                                         href={`/blog/${post.slug}/`}
-                                                        class="text-lg text-gray-800 dark:text-gray-200 hover:underline"
+                                                        class="text-lg text-blue-500 dark:text-blue-200 hover:underline hover: decoration-blue-400 underline-offset-4"
                                                     >
                                                         {post.data.title}
                                                     </a>
