@@ -81,9 +81,31 @@ import Folder from "../components/Folder.astro";
                         Projects
                     </h3>
                     <p class="text-base text-gray-700 dark:text-gray-300">
-                        Here are some of my side projects. I love building
-                        things in my free time.
+                        These side projects made it to the portfolio, husshh.
                     </p>
+
+                    <div class="flex space-x-6 mt-6" id="portfolio-nav">
+                        <a
+                            href="#all-projects"
+                            class="text-base text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100"
+                            >All</a
+                        >
+                        <a
+                            href="#system-projects"
+                            class="text-base text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100"
+                            >Systems</a
+                        >
+                        <a
+                            href="#tools"
+                            class="text-base text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100"
+                            >tools</a
+                        >
+                        <a
+                            href="#web3"
+                            class="text-base text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100"
+                            >web3</a
+                        >
+                    </div>
                 </div>
                 <div id="work-content" class="hidden">
                     <h3
@@ -91,7 +113,7 @@ import Folder from "../components/Folder.astro";
                     >
                         Work
                     </h3>
-                    <p class="text-base text-gray-700 dark:text-gray-300 mb-4">
+                    <!-- <p class="text-base text-gray-700 dark:text-gray-300 mb-4">
                         This is a publicly available record of my work that goes
                         beyond my resume.
                     </p>
@@ -100,14 +122,29 @@ import Folder from "../components/Folder.astro";
                         worked on professionally. i.e, no FOSS work and personal
                         projects. Those can be found on my GitHub, and elsewhere
                         on this site.
-                    </p>
+                    </p> -->
                     <div class="mb-6">
                         <div class="flex justify-between items-baseline">
-                            <h4
-                                class="text-lg font-medium text-gray-800 dark:text-gray-200"
-                            >
-                                GSoC
-                            </h4>
+                            <div class="flex gap-x-4">
+                                <img
+                                    src="/google_logo.jpg"
+                                    alt="google logo"
+                                    width="60px"
+                                    height="10px"
+                                    class="rounded-lg"
+                                />
+                                <div>
+                                    <h4
+                                        class="text-lg font-medium text-gray-800 dark:text-gray-200"
+                                    >
+                                        Google Summer of Code
+                                    </h4>
+                                    <span
+                                        class="text-sm text-gray-500 dark:text-gray-400"
+                                        >St. Jude Research</span
+                                    >
+                                </div>
+                            </div>
                             <span
                                 class="text-sm text-gray-500 dark:text-gray-400"
                                 >May-Sep 2025</span
@@ -131,17 +168,10 @@ import Folder from "../components/Folder.astro";
                             class="list-disc list-inside text-base text-gray-700 dark:text-gray-300 mt-2 space-y-1"
                         >
                             <li>
-                                Implemented Higher Order Functions in the
-                                Pallene compiler using lambda lifting.
+                                developed a orchestration layer using tokio and
+                                broadcast channels
                             </li>
-                            <li>
-                                Added Closures and lexical capturing to the
-                                runtime.
-                            </li>
-                            <li>
-                                Implemented on IR-level compiler optimizatons.
-                            </li>
-                            <li>Improved error messages and diagnostics.</li>
+                            <li>developed sweet macros</li>
                         </ul>
                     </div>
                 </div>
