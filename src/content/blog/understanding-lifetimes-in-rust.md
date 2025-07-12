@@ -2,6 +2,7 @@
 title: "Understanding Lifetimes in Rust"
 description: "Understanding lifetimes in Rust with a simple example"
 pubDate: "Mar 21 2025"
+updatedDate: "Mar 21 2025"  # Add this line
 heroImage: "/does_not_compile.svg"
 ---
 

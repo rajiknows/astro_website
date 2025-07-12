@@ -5,16 +5,16 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import FormattedDate from "../components/FormattedDate.astro";
 
-type Props = CollectionEntry<"blog">["data"];
-
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+type Props = CollectionEntry<"blog">; // Expect full post object
+const post = Astro.props;
+console.log(post.data);
+const { title, description, pubDate, updatedDate, heroImage } = post; // Extract from post.data
 ---
 
 <html lang="en" class="h-full">
     <head>
         <BaseHead title={title} description={description} />
     </head>
-
     <body class="h-full bg-gray-50 dark:bg-stone-900">
         <Header />
         <main class="w-full max-w-3xl mx-auto px-4 md:px-6 py-12">
@@ -32,7 +32,6 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
                     >{title}</span
                 >
             </nav>
-
             <article class="prose dark:prose-invert mx-auto">
                 {
                     heroImage && (
@@ -64,7 +63,6 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
                     </h1>
                     <hr class="border-gray-200 dark:border-gray-700" />
                 </div>
-
                 <div
                     class="text-gray-800 dark:text-gray-200 leading-relaxed text-base md:text-lg"
                 >
