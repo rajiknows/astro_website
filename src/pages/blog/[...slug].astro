@@ -1,23 +1,26 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
+export const prerender = false; // This page will be server-rendered
+
+import { type CollectionEntry, getEntry } from "astro:content";
 import BlogPost from "../../layouts/BlogPost.astro";
 import { render } from "astro:content";
 
-export async function getStaticPaths() {
-    const posts = await getCollection("blog");
-    return posts.map((post) => ({
-        params: { slug: post.id },
-        props: post,
-    }));
-}
-type Props = CollectionEntry<"blog">;
+const { slug } = Astro.params;
 
-const post = Astro.props;
-console.log(JSON.stringify(post, null, 2));
+if (!slug) {
+    return Astro.redirect("/404");
+}
+
+const post = await getEntry("blog", slug);
+
+if (!post) {
+    return Astro.redirect("/404");
+}
+
 const { Content } = await render(post);
 ---
 
-<BlogPost {...post}>
+<BlogPost {post}>
     <article
         class="prose dark:prose-invert max-w-[960px] mx-auto px-4 py-8 leading-relaxed text-lg"
     >
