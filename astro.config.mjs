@@ -14,5 +14,15 @@ export default defineConfig({
       enabled: true,
     },
   }),
+  markdown: {
+    shikiConfig: {
+      // Choose from Shiki's built-in themes (or add your own)
+      // https://shiki.style/themes
+      themes: {
+        light: "github-light",
+        dark: "github-dark",
+      },
+    },
+  },
   integrations: [mdx(), sitemap(), tailwind()],
 });

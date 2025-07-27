@@ -6,11 +6,10 @@ import Footer from "../components/Footer.astro";
 import FormattedDate from "../components/FormattedDate.astro";
 
 type Props = {
-post: CollectionEntry<"blog">; // Expect full post object
-}
-const {post} = Astro.props;
+    post: CollectionEntry<"blog">; // Expect full post object
+};
+const { post } = Astro.props;
 const { title, description, pubDate, updatedDate, heroImage } = post.data; // Extract from post.data
-
 ---
 
 <html lang="en" class="h-full">
@@ -19,7 +18,7 @@ const { title, description, pubDate, updatedDate, heroImage } = post.data; // Ex
     </head>
     <body class="h-full bg-gray-50 dark:bg-stone-900">
         <Header />
-        <main class="w-full max-w-3xl mx-auto px-4 md:px-6 py-12">
+        <main class="w-full max-w-5xl mx-auto px-4 md:px-6 py-12">
             <nav class="text-gray-700 dark:text-gray-300 text-sm mb-4">
                 <a href="/" class="hover:text-gray-500 dark:hover:text-gray-400"
                     >Home</a
@@ -34,7 +33,7 @@ const { title, description, pubDate, updatedDate, heroImage } = post.data; // Ex
                     >{title}</span
                 >
             </nav>
-            <article class="prose dark:prose-invert mx-auto">
+            <article class="prose dark:prose-invert mx-auto max-w-5xl">
                 {
                     heroImage && (
                         <img

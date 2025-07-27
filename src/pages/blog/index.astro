@@ -63,7 +63,6 @@ const postsByYear = posts.reduce((acc, post) => {
                                         {postsByYear[year][month].map(
                                             (post) => (
                                                 <li class="mb-2">
-                                                    {console.log(post)}
                                                     <a
                                                         href={`/blog/${post.id}/`}
                                                         class="text-lg text-blue-500 dark:text-blue-200 hover:underline hover: decoration-blue-400 underline-offset-4"

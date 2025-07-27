@@ -4,11 +4,18 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
+      typography: ({ theme }) => ({
+        DEFAULT: {
+          css: {
+            maxWidth: '80ch',
+          },
+        },
+      }),
       colors: {
         accent: '#2337ff',
         'accent-dark': '#000d8a',
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 };

@@ -70,41 +70,7 @@ a:hover {
     color: var(--accent-dark);
 } */
 
-code {
-    padding: 2px 5px;
-    background-color: rgb(243, 244, 246); /* bg-gray-100 */
-    border-radius: 4px;
-    color: rgb(55, 65, 81); /* text-gray-700 */
-}
 
-.dark code {
-    background-color: rgb(31, 41, 55); /* bg-gray-800 */
-    color: rgb(209, 213, 219); /* text-gray-300 */
-}
-
-pre {
-    padding: 1.5em;
-    border-radius: 8px;
-    background-color: rgb(243, 244, 246); /* bg-gray-100 */
-    color: rgb(55, 65, 81); /* text-gray-700 */
-}
-
-.dark pre {
-    background-color: rgb(31, 41, 55); /* bg-gray-800 */
-    color: rgb(209, 213, 219); /* text-gray-300 */
-}
-
-blockquote {
-    border-left: 4px solid var(--accent);
-    padding: 0 0 0 20px;
-    margin: 0px;
-    font-size: 1.333em;
-    color: rgb(75, 85, 99); /* text-gray-600 */
-}
-
-.dark blockquote {
-    color: rgb(209, 213, 219); /* text-gray-300 */
-}
 
 hr {
     border: none;
