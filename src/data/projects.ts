@@ -31,14 +31,14 @@ export const projects = [
         category: "web3",
         "category-priority": "mid",
     },
-    {
-        name: "circom-zed",
-        link: "https://github.com/rajiknows/circom-zed-lsp",
-        description:
-            "Language Server Protocol (LSP) support for the popular zero-knowledge DSL Circom within the Zed code editor.",
-        category: "tools",
-        "category-priority": "high",
-    },
+    // {
+    //     name: "circom-zed",
+    //     link: "https://github.com/rajiknows/circom-zed-lsp",
+    //     description:
+    //         "Language Server Protocol (LSP) support for the popular zero-knowledge DSL Circom within the Zed code editor.",
+    //     category: "tools",
+    //     "category-priority": "high",
+    // },
     {
         name: "rustack",
         link: "https://github.com/rajiknows/rustack",
