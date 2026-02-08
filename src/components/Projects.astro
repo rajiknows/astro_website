@@ -11,28 +11,28 @@ import ProjectCard from "./ProjectCard.astro";
         These side projects made it to the portfolio, husshh.
     </p>
 
-    <div class="flex space-x-6 mt-6" id="project-categories">
-        <a
-            href="#systems"
-            class="text-base project-category-link active"
-            >Systems</a
-        >
-        <a
-            href="#tools"
-            class="text-base text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 project-category-link"
-            >Tools</a
-        >
-        <a
-            href="#web3"
-            class="text-base text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 project-category-link"
-            >Web3</a
-        >
-        <a
-            href="#all"
-            class="text-base text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 project-category-link"
-            >All</a
-        >
-    </div>
+    <!-- <div class="flex space-x-6 mt-6" id="project-categories"> -->
+    <!--     <a -->
+    <!--         href="#systems" -->
+    <!--         class="text-base project-category-link active" -->
+    <!--         >Systems</a -->
+    <!--     > -->
+    <!--     <a -->
+    <!--         href="#tools" -->
+    <!--         class="text-base text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 project-category-link" -->
+    <!--         >Tools</a -->
+    <!--     > -->
+    <!--     <a -->
+    <!--         href="#web3" -->
+    <!--         class="text-base text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 project-category-link" -->
+    <!--         >Web3</a -->
+    <!--     > -->
+    <!--     <a -->
+    <!--         href="#all" -->
+    <!--         class="text-base text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 project-category-link" -->
+    <!--         >All</a -->
+    <!--     > -->
+    <!-- </div> -->
 
     <div id="projects-list" class="mt-8">
         <ul class="list-decimal list-inside p-0">
@@ -56,27 +56,33 @@ import ProjectCard from "./ProjectCard.astro";
             low: 1,
         };
 
-        function renderProjects(filteredAndSortedProjects) {
-            projectsList.innerHTML = ""; // Clear current projects
-            filteredAndSortedProjects.forEach((project) => {
-                const li = document.createElement("li");
-                li.classList.add("mb-2");
-                li.innerHTML = `
-                    <a
-                        href="${project.link}"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="text-lg text-blue-500 dark:text-blue-200 hover:underline hover: decoration-blue-400 underline-offset-4"
-                    >
-                        ${project.name}
-                    </a>
-                    <p class="text-sm text-gray-500 dark:text-gray-400 ml-2">
-                        - ${project.description}
-                    </p>
-                `;
-                projectsList.appendChild(li);
-            });
-        }
+		function renderProjects(filteredAndSortedProjects) {
+			projectsList.innerHTML = ""; // Clear current projects
+			filteredAndSortedProjects.forEach((project) => {
+				const li = document.createElement("li");
+				li.classList.add("mb-2");
+				li.innerHTML = `
+					<a
+						href="${project.link}"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="text-lg text-blue-500 dark:text-blue-200 hover:underline hover: decoration-blue-400 underline-offset-4"
+					>
+						${project.name}
+					</a>
+					<p class="text-sm text-gray-500 dark:text-gray-400 ml-2">
+						- ${project.description}
+					</p>
+					<span class="ml-2 inline-block text-xs px-2 py-0.5 rounded
+						bg-gray-100 text-gray-600
+						dark:bg-gray-800 dark:text-gray-300"
+					>
+						${project.category}
+					</span>                
+				`;
+				projectsList.appendChild(li);
+			});
+		}
 
         function filterAndSortProjects(selectedCategory) {
             let filteredProjects = [];
@@ -116,7 +122,7 @@ import ProjectCard from "./ProjectCard.astro";
         });
 
         // Initial render
-        filterAndSortProjects("systems");
+        filterAndSortProjects("all");
 
         // Set initial active class for Systems
         const initialActiveLink = document.querySelector("#project-categories a[href='#systems']");
