@@ -24,7 +24,7 @@ import SoftwareCard from "../components/SoftwareCard.astro";
                 Rajesh Jha
             </h1>
             <h2 class="text-xl text-gray-600 dark:text-gray-400 text-left">
-				Backend & Systems programmer | All about the ART 
+				Backend & Systems programmer | All about the ART
             </h2>
                     <div class="prose dark:prose-invert mt-8 text-left">
                         <p class="text-lg text-gray-700 dark:text-gray-300 mb-10">
@@ -55,31 +55,76 @@ import SoftwareCard from "../components/SoftwareCard.astro";
                     >
                         Work
                     </h3>
-                    <!-- <p class="text-base text-gray-700 dark:text-gray-300 mb-4">
-                        This is a publicly available record of my work that goes
-                        beyond my resume.
-                    </p>
-                    <p class="text-base text-gray-700 dark:text-gray-300 mb-10">
-                        This section only includes projects and tools that I've
-                        worked on professionally. i.e, no FOSS work and personal
-                        projects. Those can be found on my GitHub, and elsewhere
-                        on this site.
-                    </p> -->
+                    <div class="mb-10">
+                        <div class="flex justify-between items-baseline">
+                            <div class="flex gap-x-4">
+                                <img
+                                src="public/stealth_logo.jpeg"
+                                alt="systemsWay"
+                                width="60px"
+                                height="10px"
+                                class="rounded-lg"
+                                />
+                                <div>
+                                    <h4
+                                    class="text-lg font-medium text-gray-800 dark:text-gray-200"
+                                    >
+                                        Software Engineer
+                                    </h4>
+                                    <span
+                                    class="text-sm text-gray-500 dark:text-gray-400"
+                                    >SystemsWay</span
+                                    >
+                                </div>
+                            </div>
+                            <span
+                            class="text-sm text-gray-500 dark:text-gray-400"
+                            >Sep-Nov 2025</span
+                            >
+                        </div>
+                        <p
+                        class="text-base text-gray-700 dark:text-gray-300 mt-2 font-semibold"
+                        >
+                            Tech: <span class="font-normal"
+                            >Golang, Python. Pulumi, Gcp</span
+                            >
+                        </p>
+                        <p
+                        class="text-base text-gray-700 dark:text-gray-300 mt-1"
+                        >
+                            Developed Go backend services and infrastructure for scalable cloud applications. <em
+                            class="italic">Crankshaft</em
+                            >, my work includes:
+                        </p>
+                        <ul
+                        class="list-disc list-inside text-base text-gray-700 dark:text-gray-300 mt-2 space-y-1"
+                        >
+                            <li>
+                                debugging the observablity layer
+                            </li>
+                            <li>
+                            adding features to deployment configurations
+                            </li>
+                            <li>
+                                                        adding failure-safety feats into the system
+                                                        </li>
+                        </ul>
+                    </div>
                     <div class="mb-6">
                         <div class="flex justify-between items-baseline">
                             <div class="flex gap-x-4">
                                 <img
-                                    src="/google_logo.jpg"
-                                    alt="google logo"
-                                    width="60px"
-                                    height="10px"
-                                    class="rounded-lg"
+                                src="/google_logo.jpg"
+                                alt="google logo"
+                                width="60px"
+                                height="10px"
+                                class="rounded-lg"
                                 />
                                 <div>
                                     <h4
-                                        class="text-lg font-medium text-gray-800 dark:text-gray-200"
+                                    class="text-lg font-medium text-gray-800 dark:text-gray-200"
                                     >
-                                        Google Summer of Code
+                                        GSoC Mentee
                                     </h4>
                                     <span
                                         class="text-sm text-gray-500 dark:text-gray-400"
@@ -110,9 +155,10 @@ import SoftwareCard from "../components/SoftwareCard.astro";
                             class="list-disc list-inside text-base text-gray-700 dark:text-gray-300 mt-2 space-y-1"
                         >
                             <li>
-                                developed a orchestration layer using tokio and gRPC.
+                                developed a orchestration layer using tokio and
+                                broadcast channels
                             </li>
-							<li>work with async rust, and solving real time proplems</li>
+                            <li>developed sweet macros</li>
                         </ul>
                     </div>
                 </div>
